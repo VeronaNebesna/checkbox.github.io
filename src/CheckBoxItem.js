@@ -3,15 +3,15 @@ import React, { useState } from "react"
 const CheckboxItem =({
     id,
     desc,
-    deleteTodos
+    deleteTodos,
+    isChecked,
+    changeTodo
 })=> {
-    const[check, setCheck]= useState(false);
     return(
-        
         <div>
 			<div className="checkout_items" key={id}>
-				<input type="checkbox" id="select_1" onClick={()=>setCheck(!check)}></input>
-				<p className={check ? "line-through" : null}>{desc}</p>
+				<input type="checkbox" id="select_1" onClick={()=>changeTodo(id)}></input>
+				<p className={isChecked ? "line-through":"par" } >{desc}</p>
                 <button className="delete_btn" onClick={()=>deleteTodos(id)}>delete</button>
 			</div>
             <span className="line_ufter_items"></span>

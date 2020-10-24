@@ -5,8 +5,10 @@ import CheckboxItem from "./CheckBoxItem"
 
 const Checkbox = ({
     deleteTodos,
-    todos
+    todos,
+    changeTodo,
 })=>{
+    console.log(todos)
     return(
         <div key="check">
           
@@ -15,8 +17,10 @@ const Checkbox = ({
                     <CheckboxItem
                         id={id}
                         desc={desc}
-                        isChecked={isChecked}
                         deleteTodos={deleteTodos}
+                        changeTodo={changeTodo}
+                        isChecked={isChecked}
+                        
                     />
                 ) )
             }

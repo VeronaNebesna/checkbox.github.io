@@ -5,22 +5,32 @@ import CheckTodo from "./CheckTodo"
 import AddCheck from "./AddCheck"
 
 const App = ()=>{
-	const[todos, setTodos] = useState(CheckTodo)
-
+	const[todos, setTodos] = useState(CheckTodo);
 
 	function deleteTodos(id){
         setTodos(todos.filter(todo=>todo.id !==id))
 	}
+
 	function onChange(desc){
 		setTodos(todos.concat([{
 			desc,
-			id:Date.now(),	
+			id:Date.now(),
+			isChecked:false	
 		}]))
+	}
+
+	function changeTodo(id){
+		setTodos(todos.map ((todo)=>{
+			if(todo.id === id){
+				todo.isChecked= !todo.isChecked
+			}
+			return todo
+		} ))
 	}
 
   return (
     <div className="checkout_box">
-		<h1>box checkout</h1>
+		<h1>to do list</h1>
 		  	<AddCheck
 			  onChange={onChange}
 			  />
@@ -29,6 +39,7 @@ const App = ()=>{
       	<Checkbox
 		  todos={todos}
 		  deleteTodos={deleteTodos}
+		  changeTodo={changeTodo}
 		/>
     </div>
   );
