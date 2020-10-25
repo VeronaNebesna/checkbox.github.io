@@ -2,17 +2,17 @@ const CheckTodo =[
     {
         id:1,
         isChecked:false,
-        desc:"Water"
+        desc:"Buy water"
     },
     {
         id:2,
         isChecked:false,
-        desc:"Milk"
+        desc:"Buy milk"
     },
     {
         id:3,
         isChecked:false,
-        desc:"Coffee"
+        desc:"Drink Coffee with friends"
     },
 ]
 
