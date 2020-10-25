@@ -7,8 +7,8 @@ const Checkbox = ({
     deleteTodos,
     todos,
     changeTodo,
+    plus,
 })=>{
-    console.log(todos)
     return(
         <div key="check">
           
@@ -20,7 +20,7 @@ const Checkbox = ({
                         deleteTodos={deleteTodos}
                         changeTodo={changeTodo}
                         isChecked={isChecked}
-                        
+                        plus={plus} 
                     />
                 ) )
             }

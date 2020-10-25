@@ -3,14 +3,17 @@ import "./App.css"
 import Checkbox from './Checkbox'
 import CheckTodo from "./CheckTodo"
 import AddCheck from "./AddCheck"
+import ScaleText from "./ScaleText"
+
+
 
 const App = ()=>{
 	const[todos, setTodos] = useState(CheckTodo);
+	const[plus, setPlus] = useState(0);
 
 	function deleteTodos(id){
         setTodos(todos.filter(todo=>todo.id !==id))
 	}
-
 	function onChange(desc){
 		setTodos(todos.concat([{
 			desc,
@@ -18,7 +21,6 @@ const App = ()=>{
 			isChecked:false	
 		}]))
 	}
-
 	function changeTodo(id){
 		setTodos(todos.map ((todo)=>{
 			if(todo.id === id){
@@ -28,7 +30,19 @@ const App = ()=>{
 		} ))
 	}
 
+	function clickPlus (){
+		setPlus(plus+1)
+	}
+	function clickMinus(){
+		setPlus(plus-1)
+	}
   return (
+	  <>
+	  <ScaleText
+		  clickPlus={clickPlus}
+		  clickMinus={clickMinus}
+		  plus={plus}
+	  />
     <div className="checkout_box">
 		<h1>to do list</h1>
 		  	<AddCheck
@@ -38,9 +52,11 @@ const App = ()=>{
 			<Checkbox
 		  		todos={todos}
 		  		deleteTodos={deleteTodos}
-		  		changeTodo={changeTodo}
+				changeTodo={changeTodo}
+				plus={plus}
 			/>
     </div>
+	</>
   );
 }
 
