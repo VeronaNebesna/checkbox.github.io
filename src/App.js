@@ -32,15 +32,14 @@ const App = ()=>{
     <div className="checkout_box">
 		<h1>to do list</h1>
 		  	<AddCheck
-			  onChange={onChange}
-			  />
+				onChange={onChange}
+			/>
       	<span className="line"></span>
-				
-      	<Checkbox
-		  todos={todos}
-		  deleteTodos={deleteTodos}
-		  changeTodo={changeTodo}
-		/>
+			<Checkbox
+		  		todos={todos}
+		  		deleteTodos={deleteTodos}
+		  		changeTodo={changeTodo}
+			/>
     </div>
   );
 }

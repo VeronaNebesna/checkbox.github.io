@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React  from "react"
 
 const CheckboxItem =({
     id,
@@ -10,9 +10,9 @@ const CheckboxItem =({
     return(
         <div>
 			<div className="checkout_items" key={id}>
-				<input type="checkbox" id="select_1" onClick={()=>changeTodo(id)}></input>
+				<input type="checkbox" id="select_1" className="select-input" onClick={()=>changeTodo(id)}></input>
 				<p className={isChecked ? "line-through":"par" } >{desc}</p>
-                <button className="delete_btn" onClick={()=>deleteTodos(id)}>delete</button>
+                <button className="delete_btn" onClick={()=>deleteTodos(id)}><i class="fas fa-trash-alt"></i></button>
 			</div>
             <span className="line_ufter_items"></span>
         </div>

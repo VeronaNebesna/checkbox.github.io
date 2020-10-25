@@ -2,9 +2,8 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    
 }
-
+/* body */
 body{
     background:  #ddccb5;
     width: 100%;
@@ -22,27 +21,12 @@ body{
     padding: 15px;
     color:rgb(35,56,78)
 }
+/* lines */
 .line{
     display: block;
     width: 100%;
-    height: 2px;
-    background-color: black;
-}
-.par{
-    text-decoration: none;
-    color:antiquewhite;
-}
-.checkout_items{
-    display: flex;
-    padding:15px;
-    align-items: center;
-    justify-content: space-around;
-}
-.checkout_items p{
-    padding-left:20px;
-}
-.checkout_items .line-through{
-   text-decoration: line-through;
+    height: 3px;
+    background-color: antiquewhite;;
 }
 .line_ufter_items{
     display: block;
@@ -50,22 +34,50 @@ body{
     background-color:antiquewhite;
     height: 1px;
 }
+/* todo items */
+.checkout_items{
+    display: flex;
+    padding:15px 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkout_items p{
+    padding-left:20px;
+}
+
+/* classes for todo items done */
+.checkout_items .line-through{
+   text-decoration: line-through;
+}
+.par{
+    text-decoration: none;
+    color:antiquewhite;
+}
+
+/*  delete btn */
+
+.select-input{
+    cursor: pointer;
+}
 .delete_btn{
-    height: 30px;
-    width: 70px;
+    font-size: 20px;
     border:none;
-    background-color: rgba(79, 90, 95, 0.5);
+    background-color: rgb(112, 159, 180);
     color:rgb(255,255,255);
     cursor: pointer;
-    text-transform: uppercase;
 }
+.delete_btn:hover{
+    color: rgb(62, 88, 100);
+    transition: all 1s ease-in-out;
+}
+/* add checkbox style */
 .input_fild {
     width: 100%;
     margin: 0 15px 15px 15px;
     
 }
 .input_fild input {
-    width: 70%;
+    width: 75%;
     border:none;
     background-color: rgba(255,255,255,.4);
     height: 30px;
@@ -79,4 +91,8 @@ body{
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+    color:rgb(35,56,78)
+}
+.input_fild button:focus, .input_fild input:focus {
+    outline:1px  solid white;
 }
